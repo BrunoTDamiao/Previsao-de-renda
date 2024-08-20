@@ -445,7 +445,7 @@ st.markdown('''
 ''', unsafe_allow_html=True)
 
 
-st.markdown('[Simulando a previsão de renda](https://bruno-projeto02-previsao-renda-ebac.streamlit.app/~/+/Simulac%CC%A7a%CC%83o)')
+st.markdown('[Simulando a previsão de renda](https://bruno-projeto02-previsao-renda-ebac.streamlit.app)')
 
 
 '---'
