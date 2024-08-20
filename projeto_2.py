@@ -17,23 +17,20 @@ from sklearn import tree
 
 st.set_page_config(
     page_title="Projeto #02 | Previsão de renda",
-    page_icon="https://raw.githubusercontent.com/rhatiro/previsao-renda/main/ebac-course-utils/media/icon/favicon.ico",
+    page_icon="https://github.com/BrunoTDamiao/Previsao-de-renda/blob/main/img/favicon-.png",
     layout="wide",
     initial_sidebar_state="auto",
 )
 
 
 st.sidebar.markdown('''
-<div style="text-align:center">
-<img src="https://raw.githubusercontent.com/rhatiro/previsao-renda/main/ebac-course-utils/media/logo/newebac_logo_black_half.png" alt="ebac-logo" width=50%>
-</div>
 
 # **Profissão: Cientista de Dados**
-### [**Projeto #02** | Previsão de renda](https://github.com/rhatiro/previsao-renda)
+### [**Projeto #02** | Previsão de renda](https://github.com/BrunoTDamiao/Previsao-de-renda)
 
-**Por:** [Roberto Hatiro Nishiyama](https://www.linkedin.com/in/rhatiro/)<br>
-**Data:** 14 de abril de 2023.<br>
-<!-- **Última atualização:** 14 de abril de 2023. -->
+**Por:** [Bruno Tozi Damião](https://www.linkedin.com/in/brunotdamiao/)<br>
+**Data:** 20 de agosto de 2024.<br>
+<!-- **Última atualização:** 20 de agosto de 2024. -->
 
 ---
 ''', unsafe_allow_html=True)
@@ -84,8 +81,6 @@ with st.sidebar.expander("Bibliotecas/Pacotes", expanded=False):
     ''', language='python')
 
 
-st.markdown('# <div style="text-align:center"> [Previsão de renda](https://github.com/rhatiro/previsao-renda) </div>',
-            unsafe_allow_html=True)
 
 
 st.divider()
@@ -199,12 +194,13 @@ st.markdown('''
 #### Matriz de correlação <a name="correlacao"></a>
 ''', unsafe_allow_html=True)
 
+renda_cor = renda[['posse_de_imovel','qtd_filhos','idade','tempo_emprego','qt_pessoas_residencia','renda']]
 
-st.write((renda
-          .iloc[:, 3:]
-          .corr()
-          .tail(n=1)
-          ))
+
+st.write((renda_cor
+         .corr()
+         .tail(n=1)
+         ))
 
 
 st.markdown('A partir da matriz de correlação, é possível observar que a variável que apresenta maior relação com a varíavel `renda` é `tempo_emprego`, com um índice de correlação de 38,5%.')
@@ -235,11 +231,11 @@ st.markdown('''
 
 
 cmap = sns.diverging_palette(h_neg=100,
-                             h_pos=359,
+                             h_pos=300,
                              as_cmap=True,
                              sep=1,
                              center='light')
-ax = sns.clustermap(data=renda.corr(),
+ax = sns.clustermap(data=renda_cor.corr(),
                     figsize=(10, 10),
                     center=0,
                     cmap=cmap)
@@ -247,7 +243,7 @@ plt.setp(ax.ax_heatmap.get_xticklabels(), rotation=45)
 st.pyplot(plt)
 
 
-st.markdown('Com o *clustermap*, é possível reforçar novamente os resultados de baixa correlação com a variável `renda`. Apenas a variável `tempo_emprego` apresenta um índice considerável para análise. Além disso, foram apresentadas duas variáveis booleanas, `posse_de_imovel` e `posse_de_veiculo`, mas que também possuem baixo índice de correlação com renda.')
+st.markdown('Com o clustermap, é possível reforçar novamente os resultados de baixa correlação com a variável renda. Apenas a variável tempo_emprego apresenta um índice considerável para análise. Além disso, foi apresentada uma variável booleana, posse_de_imovel, mas que também possui baixo índice de correlação com renda')
 
 
 st.markdown('''
@@ -449,7 +445,7 @@ st.markdown('''
 ''', unsafe_allow_html=True)
 
 
-st.markdown('[Simulando a previsão de renda](https://rhatiro-ebac-projeto02-previsao-renda.streamlit.app/~/+/Simulac%CC%A7a%CC%83o)')
+st.markdown('[Simulando a previsão de renda](https://bruno-projeto02-previsao-renda-ebac.streamlit.app/~/+/Simulac%CC%A7a%CC%83o)')
 
 
 '---'
