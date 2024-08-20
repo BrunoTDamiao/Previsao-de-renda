@@ -1,4 +1,3 @@
-      
 altair
 annotated-types
 attrs
