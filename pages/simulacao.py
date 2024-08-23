@@ -40,7 +40,7 @@ with st.sidebar.expander("Bibliotecas/Pacotes", expanded=False):
     ''', language='python')
 
 
-filepath = '../input/previsao_de_renda.csv'
+filepath = './input/previsao_de_renda.csv'
 renda = pd.read_csv(filepath_or_buffer=filepath)
 renda.drop(columns=['Unnamed: 0', 'id_cliente'], inplace=True)
 renda.drop_duplicates(inplace=True, ignore_index=True)
