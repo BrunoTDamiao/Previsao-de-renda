@@ -78,4 +78,4 @@ watchdog==3.0.0
 wordcloud==1.9.2
 ydata-profiling==4.6.1
 zipp==3.17.0
-python==3.10
+python==3.9
